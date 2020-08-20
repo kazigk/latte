@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "required": ["text"],
+  "properties": {
+    "text": {
+      "type": "string"
+    },
+    "blocks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/block" }
+    }
+  },
+  "definitions": {
+    "block": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "section"
+        },
+        "text": {
+          "$ref": "#/definitions/text"
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/text"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "required": ["text"]
+        },
+        {
+          "required": ["fields"]
+        }
+      ]
+    },
+    "text": {
+      "type": "object",
+      "required": ["type", "text"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "const": "mrkdwn"
+        },
+        "text": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

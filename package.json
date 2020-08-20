@@ -1,0 +1,18 @@
+{
+  "name": "latte",
+  "version": "0.1.0",
+  "description": "Slack-like incoming webhook for Telegram",
+  "main": "app.js",
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "dependencies": {
+    "ajv": "^6.12.4",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "emojis": "^1.0.10",
+    "express": "^4.17.1",
+    "telegraf": "^3.38.0",
+    "volleyball": "^1.5.1"
+  }
+}
